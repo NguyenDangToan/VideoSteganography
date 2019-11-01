@@ -136,13 +136,13 @@ function btn_hide_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_hide (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
+h = msgbox('please wait');
 x2 = get(handles.edt_file_path1, 'String');
 x1 = get(handles.edt_video_path1, 'String');
-x3 = get(handles.edt_password1, 'String');
-h = msgbox('please wait');
-[status]=Hide_data_audio(x1,x2, x3);
+[thanhcong] = Hide_data_audio(x1,x2);
 delete(h);
-if(status==1)
+if(thanhcong == 1) 
+    
     helpdlg('Data hided successfully');
 else
     helpdlg('Unsuccessful!!! File size is too big');
@@ -237,17 +237,17 @@ function btn_retrieve_Callback(hObject, eventdata, handles)
 % hObject    handle to btn_retrieve (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
-x1 = get(handles.edt_video_path2, 'String');
-x2 = get(handles.edt_password2, 'String');
 h = msgbox('please wait');
-Retrieve_data_audio(x1,x2);
+x1 = get(handles.edt_video_path2, 'String');
+[ok] = data_extracting(x1);
 delete(h);
-f1 = fopen('x.txt','r');
-f = fread(f1);
-s = char(f');
-fclose(f1);
-set(handles.edt_show_message2, 'String', s);
-helpdlg('Data hided successfully');
+if (ok == 0)
+    helpdlg('Unsuccessful!!! Oops!');
+else
+    helpdlg('Data hided successfully');
+    system('notepad x.txt');
+%     set(handles.edt_show_message2, 'String', ok);
+end
 
 
 
@@ -309,47 +309,3 @@ if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgr
 end
 
 
-
-function edt_password1_Callback(hObject, eventdata, handles)
-% hObject    handle to edt_password1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edt_password1 as text
-%        str2double(get(hObject,'String')) returns contents of edt_password1 as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function edt_password1_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edt_password1 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
-
-
-
-function edt_password2_Callback(hObject, eventdata, handles)
-% hObject    handle to edt_password2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edt_password2 as text
-%        str2double(get(hObject,'String')) returns contents of edt_password2 as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function edt_password2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edt_password2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end

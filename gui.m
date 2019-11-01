@@ -22,7 +22,7 @@ function varargout = gui(varargin)
 
 % Edit the above text to modify the response to help gui
 
-% Last Modified by GUIDE v2.5 02-Oct-2019 11:34:13
+% Last Modified by GUIDE v2.5 20-Oct-2019 22:25:40
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -92,3 +92,11 @@ function btn_hide_in_audio_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 hide_file_in_audio
+
+
+% --- Executes on button press in btn_assess_video.
+function btn_assess_video_Callback(hObject, eventdata, handles)
+% hObject    handle to btn_assess_video (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+video_assessment

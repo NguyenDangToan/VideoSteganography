@@ -8,6 +8,9 @@ function [img] = functionhide_forvideo(img,f,start,framesize)
             i1 = img(i,j,1);
             i2 = img(i,j,2);
             i3 = img(i,j,3);
+            disp(i1);
+            disp(i2);
+            disp(i3);
             [r1 , g1 ,b1]=hidedata(i1,i2,i3,a);
             img(i,j,1) = r1;
             img(i,j,2) = g1;

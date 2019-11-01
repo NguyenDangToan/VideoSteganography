@@ -10,27 +10,27 @@ if bitand(txt,64)== 64 % 64 = 0100 0000
     red = bitor(red,2);
 end
 
-if bitand(txt,32)== 32
+if bitand(txt,32)== 32 % 32 = 0010 0000
     red = bitor(red,1);
 end
 
-if bitand(txt,16)== 16
+if bitand(txt,16)== 16 % 16 = 0001 0000
     green = bitor(green,4);
 end
 
-if bitand(txt,8)== 8
+if bitand(txt,8)== 8 % 8 = 0000 1000
     green = bitor(green,2);
 end
 
-if bitand(txt,4)== 4
+if bitand(txt,4)== 4 % 4 = 0000 0100
     green = bitor(green,1);
 end
 
-if bitand(txt,2)== 2
+if bitand(txt,2)== 2 % 2 =000 0010
     blue = bitor(blue,2);
 end
 
-if bitand(txt,1)== 1
+if bitand(txt,1)== 1 % 1 = 0000 0001
     blue = bitor(blue,1);
 end
 end  

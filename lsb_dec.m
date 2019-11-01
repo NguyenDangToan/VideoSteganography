@@ -8,7 +8,7 @@ function out = lsb_dec( wavin, pass )
 %   OUTPUT VARIABLES
 %       out   : Retrieved message
 %
-
+%   Kadir Tekeli (kadir.tekeli@outlook.com)
 
 if (nargin<2)
     pass = 'password123';

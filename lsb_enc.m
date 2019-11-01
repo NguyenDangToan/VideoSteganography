@@ -1,4 +1,4 @@
-function lsb_enc(wavin, wavout, text, pass)
+function[status] = lsb_enc(wavin, wavout, text, pass)
 %LSB_ENC LSB Coding technique for WAV files using one bit to hide
 %
 %   INPUT VARIABLES
@@ -51,8 +51,10 @@ if (len_cover >= len_msg+48)
     fwrite(out,cover,'uint16');
     fclose(out);
 else
-    error('Message is too long!');
+%     error('Message is too long!');
+    status = 0;
 end
+status = 1;
 end
 
 function b = d2b( d, n )

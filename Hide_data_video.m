@@ -46,6 +46,7 @@ function[status] = Hide_data_video(vidfile,txtfile)
                     writeVideo(videoOut,vidFrame2);
                 end
             end
+%             disp(count);
             
         end
             %array={};
@@ -81,7 +82,7 @@ function[status] = Hide_data_video(vidfile,txtfile)
         %add audio into stego video
         video_filename = 'output.avi';
         audio_filename = 'audio.wav';
-        out_filename = '.\video\stegovideo.avi';
+        out_filename = '.\stego_video\stego_video.avi';
 
         videoFReader = VideoReader(video_filename);
         FR = videoFReader.FrameRate;

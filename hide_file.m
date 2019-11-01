@@ -22,7 +22,7 @@ function varargout = hide_file(varargin)
 
 % Edit the above text to modify the response to help hide_file
 
-% Last Modified by GUIDE v2.5 30-Sep-2019 06:53:54
+% Last Modified by GUIDE v2.5 19-Oct-2019 12:33:37
 
 % Begin initialization code - DO NOT EDIT
 gui_Singleton = 1;
@@ -245,32 +245,12 @@ if(status==1)
     f1 = fopen('x.txt','r');
     f = fread(f1);
     s = char(f');
-    set(handles.edt_show_message2, 'String', s);
+    system('notepad x.txt');
 else
     helpdlg('Unsuccessful!!! error occured');
 end
 
 
-function edt_show_message2_Callback(hObject, eventdata, handles)
-% hObject    handle to edt_show_message2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    structure with handles and user data (see GUIDATA)
-
-% Hints: get(hObject,'String') returns contents of edt_show_message2 as text
-%        str2double(get(hObject,'String')) returns contents of edt_show_message2 as a double
-
-
-% --- Executes during object creation, after setting all properties.
-function edt_show_message2_CreateFcn(hObject, eventdata, handles)
-% hObject    handle to edt_show_message2 (see GCBO)
-% eventdata  reserved - to be defined in a future version of MATLAB
-% handles    empty - handles not created until after all CreateFcns called
-
-% Hint: edit controls usually have a white background on Windows.
-%       See ISPC and COMPUTER.
-if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
-    set(hObject,'BackgroundColor','white');
-end
 
 
 % --- Executes on button press in btn_browse_video2.
@@ -298,6 +278,29 @@ function edt_video_path2_Callback(hObject, eventdata, handles)
 % --- Executes during object creation, after setting all properties.
 function edt_video_path2_CreateFcn(hObject, eventdata, handles)
 % hObject    handle to edt_video_path2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    empty - handles not created until after all CreateFcns called
+
+% Hint: edit controls usually have a white background on Windows.
+%       See ISPC and COMPUTER.
+if ispc && isequal(get(hObject,'BackgroundColor'), get(0,'defaultUicontrolBackgroundColor'))
+    set(hObject,'BackgroundColor','white');
+end
+
+
+
+function edt_show_message2_Callback(hObject, eventdata, handles)
+% hObject    handle to edt_show_message2 (see GCBO)
+% eventdata  reserved - to be defined in a future version of MATLAB
+% handles    structure with handles and user data (see GUIDATA)
+
+% Hints: get(hObject,'String') returns contents of edt_show_message2 as text
+%        str2double(get(hObject,'String')) returns contents of edt_show_message2 as a double
+
+
+% --- Executes during object creation, after setting all properties.
+function edt_show_message2_CreateFcn(hObject, eventdata, handles)
+% hObject    handle to edt_show_message2 (see GCBO)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    empty - handles not created until after all CreateFcns called
 
