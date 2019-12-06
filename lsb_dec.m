@@ -1,3 +1,4 @@
+
 function out = lsb_dec( wavin, pass )
 %LSB_DEC LSB Coding technique for WAV files using one bit to hide
 %

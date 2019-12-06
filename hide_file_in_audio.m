@@ -137,6 +137,7 @@ function btn_hide_Callback(hObject, eventdata, handles)
 % eventdata  reserved - to be defined in a future version of MATLAB
 % handles    structure with handles and user data (see GUIDATA)
 h = msgbox('please wait');
+system('del .\audio\stego_audio.wav');
 x2 = get(handles.edt_file_path1, 'String');
 x1 = get(handles.edt_video_path1, 'String');
 [thanhcong] = Hide_data_audio(x1,x2);

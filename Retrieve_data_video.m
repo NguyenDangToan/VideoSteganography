@@ -15,14 +15,14 @@ function[status] = Retrieve_data_video(vidfile,key)
     j=1;
     R=zeros(1,filesize);
     s=1;
-    k=1;
+    k=0;
     
     while(k<=filesize)
                 
         if hasFrame(vidObj)
         	vidFrame1 = readFrame(vidObj);
         	i=1;j=1;n=1;
-            if(k+framesize<filesize)
+            if(k+framesize<=filesize)
                 while n<=framesize
                     r1=vidFrame1(i,j,1);
                     r2=vidFrame1(i,j,2);

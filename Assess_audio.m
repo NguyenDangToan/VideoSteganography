@@ -7,6 +7,7 @@ function[status, MSE, PSNR] = Assess_audio(original_video,stego_video)
     audiowrite('.\audio\assess_stego_video.wav', input_file2, Fs2);
     [y1,fs1]=audioread('.\audio\assess_stego_video.wav');
     [y2,fs2]=audioread('.\audio\assess_original_video.wav');
+    %[m,n] = size(A) returns the number of rows and columns when A is a matrix.
     [c1x,c1y]=size(y1);
     [c2x,c2y]=size(y2);
     if c1x ~= c2x
